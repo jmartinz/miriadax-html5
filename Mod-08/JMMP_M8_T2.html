@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ejercicio M8 T2</title><meta charset="UTF-8">
+<script type="text/javascript" src="zepto.min.js" > </script>
+<script type="text/javascript" src="touch.js" ></script>
+<script type="text/javascript">
+  $(function(){ 
+    var t, cl = $("#crono"),at = $("#areatoque");
+
+    function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
+    function arrancar() { t=setInterval(mostrar, 100);};
+    function parar()    { clearInterval(t);  t=undefined; };
+    function cambiar()  { if (!t) arrancar(); else parar(); };
+
+
+    at.on('tap', cambiar);
+    at.on('swipe', function(){ cl.html("0.0"); });
+  });
+</script>
+</head>
+<body>
+<h2>Cronómetro</h2>
+
+<h2 id="areatoque"><span id="crono"> 0.0 </span> segundos </h2>
+
+
+</body>
+</html>    

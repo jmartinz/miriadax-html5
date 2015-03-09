@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body> 
+		<h1> Ejercicio M5 P2P . Funciones e internacionalización </h1>
+
+		<script type="text/javascript">
+
+			// Función que devuelve un aleatorio entre 1 y 3
+			function num() {
+			   aleatorio  = Math.random()*3;
+			   aleatorio_ceil = Math.ceil(aleatorio);
+			  return (aleatorio_ceil);
+			};
+
+			var randomNum = num();
+			// Prompt pide un dato con un desplegable
+			var guessNum = prompt("Introduza un número entre 1 y 3 (1和3之间输入一个数字)");
+			// Cambiamos el tipo a number
+			guessNum = +guessNum;
+
+			// isNaN(..) determina si es un número
+			if (isNaN(guessNum) ||(guessNum!==1&&guessNum!==2&&guessNum!==3) ) {
+			  document.write('Debe contestar solo 1, 2 ó 3 (必须仅1，2或3个回答)');
+			}
+			else if (guessNum === randomNum) {
+			  document.write('Correcto (权)');
+			} 
+			else {
+			  document.write('Lo siento, el número era (对不起，该号码是) <strong>' +randomNum+'</strong>' );
+			}
+		</script>
+	</body>
+</html>

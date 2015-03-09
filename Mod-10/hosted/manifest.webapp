@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "name": "Geo_JMMP",
+  "description": "Ejercicio M10 P2P. Geoposicionamiento",
+  "launch_path": "/miriadax/hosted/clock.htm",
+
+  "icons": {
+    "16":  "/miriadax/hosted/icon16.png",
+    "48":  "/miriadax/hosted/icon48.png",
+    "128": "/miriadax/hosted/icon128.png"
+  },
+  "developer": {
+    "name": "Jose M. Martín",
+    "url": "https://www.miriadax.net/"
+  }
+}

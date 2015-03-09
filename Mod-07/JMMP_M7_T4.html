@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="zepto.min.js" > </script>
+	</head>
+	<body> 
+		<h1> Ejercicio M7 T4. Bucles </h1>
+
+		<script type="text/javascript">
+		
+			function suma (cond) {
+			  var contesta = "", sum=0, error=false;           // inicialización del bucle
+			  while ( contesta  !== cond ) {// condición de permanencia
+				var frase = "Introduza un número o "+cond+" para finalizar.\nLa suma es: "+sum;
+				if (error){
+					frase += "\n Entrada errónea, vuelva a intentarlo.";
+				}
+				contesta = prompt(frase	);
+				if (isNaN(contesta) &&(contesta  !== cond )) {
+				  error = true;
+				}
+				else if (!isNaN(contesta)) {
+					sum += +contesta;
+					error = false;
+				}
+				else error = false;
+			  }
+			  $('#resultado').html("La suma es: " + sum);
+			  return sum;
+			  
+			};
+			
+			/*var btnWi = $('#botonWhile');
+			btnWi.click(suma("ter"));*/
+		$("#button").click( function()
+           {
+             alert('button clicked');
+           }
+        );
+			
+
+	
+		</script>
+		<button type="button" id="botonWhile"> while	 </button>
+		<div id="resultado" />
+
+        <button type="button" id="button" data-role="button">Click on button</button>
+
+	</body>
+</html>

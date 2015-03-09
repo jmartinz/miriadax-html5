@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Herencia</title>
+		<style type="text/css">
+			.cabecera h1{color:orange} 			/* 0,0,1,1 */
+			#caja h1{color:red}					/* 0,1,0,1 */			
+			#caja .cabecera h1{color:purple}	/* 0,1,1,1 <-- GANA!!*/		
+			h1{color:blue}						/* 0,0,0,1 */
+			h1{color:yellow}					/* 0,0,0,1 */
+		</style>
+	</head>
+	<body>
+		<div id="caja">
+			<header class="cabecera">
+				<h1>Cabecera: header</h1>
+			</header>
+		</div>
+	</body>
+</html>
