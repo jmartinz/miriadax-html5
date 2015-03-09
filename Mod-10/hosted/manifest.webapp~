@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "1.0",
   "name": "Geo_JMMP",
   "description": "Ejercicio M10 P2P. Geoposicionamiento",
@@ -10,7 +10,7 @@
     "128": "/miriadax/hosted/ico_128.png"
   },
   "developer": {
-    "name": "Jose M. Martin",
+    "name": "Jose M. Martín",
     "url": "https://www.miriadax.net/"
   }
 }
