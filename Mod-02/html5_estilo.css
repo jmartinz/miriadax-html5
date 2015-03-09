@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+	  font-family: 'fira';
+	  src: url('FiraSansOT-Light.otf');
+      }
+.caja header {
+	background-color: #FFF;
+	padding: 5px;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.caja header h1 {
+	margin: 0px;
+	padding: 0px;
+}
+.caja header p {
+	background-color: #CCC;
+	padding: 5px;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.caja nav {
+	background-color: #C13832;
+}
+.caja nav ul {
+	margin: 0px;
+	padding: 5px;
+	list-style-type: none;
+}
+.caja nav ul li {
+	display: inline;
+}
+.caja nav ul li a {
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9em;
+        padding: 6px;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #FFF;
+	background-color: #E55525;
+}
+.caja nav ul li a:hover {
+	      border-bottom-width: 5px;
+	      border-bottom-style: solid;
+	      border-bottom-color: #ffa500;
+} 
+.caja article {
+	width: 60%;
+	float: left;
+	padding: 5px;
+}
+.caja article h2 {
+	font-size: small;
+}
+.caja aside {
+	float: right;
+	width: 34%;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+.caja footer {
+	background-color: #CCC;
+	font-size: small;
+	padding: 5px;
+	clear: both;
+}
+.caja {
+	font-family: fira; //Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+
+.caja  #fecha{
+	color:#A52A2A;
+	font-size: 11px;
+}

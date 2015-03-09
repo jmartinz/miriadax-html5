@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>M6T4</title>
+  </head>
+  <body>
+    <h3>Sentencia for/in:</h3>
+    <div id="salida">
+
+    </div>
+
+    <script type="text/javascript">
+      var y = {x:'hola', y:'que', z:'tal', t: 'estás'};
+
+      var prop;
+      var div_salida = document.getElementById("salida");
+      var cadena_total ="";
+
+      for (prop in y) {
+	    cadena_total +=   y[prop] + "  "; 
+	    
+      }
+      
+      div_salida.innerHTML = cadena_total;
+      
+    </script>
+  </body>
+</html>

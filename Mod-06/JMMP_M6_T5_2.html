@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><title>Reloj.M6T5</title>
+	  <meta charset="UTF-8">
+
+<script type="text/javascript">
+  var encendido = encendido || true;
+
+  
+  // escribe la hora 
+  function mostrar_hora( ) {
+    var cl = document.getElementById("hora");
+    ahora=new Date( ); 
+    str_hora = ahora.getHours() + " horas, " + ahora.getMinutes() + " minutos, " + 
+		ahora.getSeconds() + " segundos, " + ahora.getMilliseconds() + " ms.";
+    cl.innerHTML =  str_hora;
+  }
+
+  //canbia el estado de encendido a apagado  
+  function cambia_reloj( ) {
+    encendido = !encendido;
+    
+    //si está encendido lo pone en azul y rearranca el intervalo
+    if(encendido){      
+      document.getElementById("hora").style.color = "blue";
+      intervalo = setInterval(mostrar_hora, 1);
+    } else{    //si está apagado lo pone en rojo y limpia el intervalo
+      document.getElementById("hora").style.color = "red";
+      clearInterval(intervalo);
+    } 
+    
+  }
+</script>
+
+</head>
+
+<body>
+<h2>Reloj. M6T5.</h2>
+
+<div id="hora"><div>
+
+<script type="text/javascript">
+  document.getElementById("hora").style.color = "blue";
+  mostrar_hora();// muestra hora al cargar
+                  // actualiza cada milisegundo
+  var intervalo = setInterval(mostrar_hora, 1); 
+  // crea el listener para el div hora
+  var cl = document.getElementById("hora");
+  cl.addEventListener('click',cambia_reloj); 
+</script>
+</body>
+</html>

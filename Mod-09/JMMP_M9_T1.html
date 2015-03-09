@@ -1,0 +1,52 @@
+<!DOCTYPE html><html>
+<head><title>JMMP M9 T1</title><meta charset="UTF-8">
+<script type="text/javascript" src="zepto.min.js" ></script>
+<script>
+  function animar() { 
+    var d = new Date();
+    var s = d.getSeconds();   // grados = segundos * 6 
+    var m = d.getMinutes();   // grados = minutos * 6 
+    var h = d.getHours();
+    var ds = d.getMilliseconds()/10; // Muevo en centésimas de segundo para sensación de continuidad
+    var hh = h*30 + m/2;  // grados de la manecilla de horas
+    $("#tex").html(h + ":" + m + ":" + s);
+    $("#hor").attr("transform", "rotate(" + hh + " 80 80)");
+    $("#min").attr("transform", "rotate(" + m*6 + " 80 80)");
+    $("#seg").attr("transform", "rotate(" + s*6 + " 80 80)");
+    $("#dseg").attr("transform", "rotate(" + ds*3.6 + " 80 105)");
+    $("#svgText").html(h + ":" + m + ":" + s);
+
+  }
+  $(function(){
+    setInterval(animar, 10); // Muevo en centésimas de segundo para sensación de continuidad
+    animar();
+  })
+</script>  
+</head>
+  <body>
+    <h1>Reloj M9 T1</h1>
+
+
+
+    <svg id="vector" viewBox="0 0 200 200">
+	<circle id='myCircle'  cx='80' cy='80' r='50'
+		fill='white' stroke='black'  stroke-width='3' />
+	<rect id="txtRect" height="25" width="60" y="45" x="50" stroke-width="2" stroke="#000000" fill="#FFFFFF"/>
+	 <text id="svgText" x="52" y="63" fill="red" font-family="Verdana" font-size="13"></text>
+	<circle id='dsCircle'  cx='80' cy='105' r='15'
+		fill='white' stroke='black'  stroke-width='3' />	
+	<line id="dseg" x1='80' y1='105' x2='80' y2='90'
+	      style='stroke:blue;stroke-width:1'/>	
+	<line id="hor" x1='80' y1='80' x2='80' y2='50'
+	      style='stroke:grey;stroke-width:5'/>
+	<line id="min" x1='80' y1='80' x2='80' y2='40'
+	      style='stroke:grey;stroke-width:3'/>
+	<line id="seg" x1='80' y1='80' x2='80' y2='30'
+	      style='stroke:red;stroke-width:1'/>
+
+
+
+    </svg>
+
+  </body>
+</html>

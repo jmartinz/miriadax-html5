@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tabla</title>
+    <style type="text/css">
+      body {
+	      font-family: Arial, Helvetica, sans-serif;
+	      font-size: 0.8em;
+      }
+      div{
+	      padding: 10px;
+	      margin: 10px;
+      }
+      table {
+	      padding: 0px;
+	      margin: 0px;
+	      border-spacing: 0px;
+	      font-family: Arial, Helvetica, sans-serif;
+	      font-size: 0.8em;
+	      border: 1px solid black;
+      }
+      th, td {
+	      padding: 0.5em;
+	      border-bottom-width: 1px;
+	      border-bottom-style: solid;
+	      border-bottom-color: #333;
+      }
+      th {
+	      background-color: #E2E2E2;
+      }
+      td {
+	      background-color: #F0F0F0;
+      }
+      
+    </style>
+    <script type="text/javascript">
+
+      function res() {
+	var titulo =  document.getElementById('titulo');
+	var objeto = document.getElementById('objeto');
+	var resultado = document.getElementById('resultado');
+	var i, tabla = document.getElementById("tabla");
+	var div_tabla = document.getElementById("restab");
+	var pet_objeto = objeto.value;
+	
+
+	if (pet_objeto in window && typeof window[pet_objeto]=== 'object'){
+	  div_tabla.style.display = 'block';
+	  resultado.style.display = 'none';
+	  tabla.innerHTML="<tr><th> Propiedad </th><th> Valor </th></tr>";
+	  titulo.innerHTML= "Propiedades del objeto " + pet_objeto;
+	  for (i in window[pet_objeto]){   //cada iteración genera una fila de la tabla
+	    var valor=window[pet_objeto][i]; ;
+	    if ((typeof valor === 'object')||(typeof valor === 'function'))
+	      valor=" No imprimible: "+typeof valor;
+
+	    tabla.innerHTML+="<tr><th>"+i+"</th><td>"+valor+"</td></tr>";
+	  }
+	}
+	else{
+	  div_tabla.style.display = 'none';
+	  resultado.style.display = 'block';
+	  objeto.value= "pruebe otra vez";
+	  titulo.innerHTML= "Propiedades de objetos ";
+	}
+	
+      }
+    </script>
+  </head>
+
+    <body>
+    <h2 id="titulo"> Propiedades de objetos </h2>
+    
+    <div>
+      Introduzca el objeto: 
+
+      <input type="text" id="objeto" value="responda aquí" autocomplete="off" >
+
+      <button type="button" onclick="res()">consultar</button>
+    </div>
+	<!-- tabla con propiedades de screen -->
+    <div id="resultado" style="display:none"> 
+      "Lo que ha introducido no es un objeto válido"
+    </div>
+    <div id="restab" style="display:none"> 
+      <table id="tabla">
+      </table> 
+    </div>
+    </div>
+
+    <script>
+
+
+
+    </script>
+  </body>
+</html>
